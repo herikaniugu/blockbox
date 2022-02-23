@@ -28,5 +28,8 @@
     "hardhat": "^2.8.4",
     "ipfs-http-client": "^56.0.1",
     "web3modal": "^1.9.5"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
