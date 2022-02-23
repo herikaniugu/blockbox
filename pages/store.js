@@ -5,15 +5,12 @@ import Navbar from "./components/Navbar";
 export default function Store() {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState("not-loaded");
-  const onLoadProperties = () => {
-    return fetchProperties().then((items) => {
+  useEffect(() => {
+    fetchProperties().then((items) => {
       setProperties(items);
       setLoading("loaded");
       console.log(properties);
     }).catch((error) => console.log(error));
-  };
-  useEffect(() => {
-    onLoadProperties();
   }, []);
   const onMouseEnterColor = (e) => e.target.style.backgroundColor = "#9241f3";
   const onMouseLeaveColor = (e) => e.target.style.backgroundColor = "#3b3545";

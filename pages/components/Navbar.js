@@ -83,7 +83,8 @@ export default function Navbar() {
                                             alignItems: "center",
                                             justifyContent: "center",
                                             flex: 1
-                                        }}>
+                                        }}
+                                        passHref>
                                         <div
                                             style={{
                                                 backgroundColor: "transparent",

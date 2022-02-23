@@ -14,7 +14,7 @@ export default function Creator() {
   };
   useEffect(() => {
     onLoadProperties();
-  }, []);
+  });
   const onMouseEnterColor = (e) => { e.target.style.backgroundColor = "#77b4ff"; e.target.style.color = "#120f1a"; };
   const onMouseLeaveColor = (e) => { e.target.style.backgroundColor = "#3b3545"; e.target.style.color = "#ddd"; };
   return (

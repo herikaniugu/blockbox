@@ -48,7 +48,7 @@ export default function Tokenize() {
                         }}>
                         {
                             image && (
-                                <img width="320" src={image}/>
+                                <img width="320" src={image} alt=""/>
                             )
                         }
                     </div>
