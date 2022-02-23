@@ -10,7 +10,7 @@ contract Property is ERC721URIStorage {
 	Counters.Counter private _tokenIds;
 	address contractAddress;
 
-	constructor(address marketplaceAddress) ERC721("Blockdemo", "BLDE") {
+	constructor(address marketplaceAddress) ERC721("Blockbox", "BLBX") {
 		contractAddress = marketplaceAddress;
 	}
 

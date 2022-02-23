@@ -1,5 +1,4 @@
 import { ethers } from 'ethers';
-import { create as ipfsHttpClient } from 'ipfs-http-client';
 import Web3Modal from 'web3modal';
 import axios from 'axios';
 
@@ -8,14 +7,13 @@ import { propertyaddress, propertymarketaddress } from '../config';
 import Property from '../artifacts/contracts/Property.sol/Property.json';
 import Market from '../artifacts/contracts/Market.sol/Market.json';
 
-let rpcEndpoint = null;
-if (process.env.NEXT_PUBLIC_WORKSPACE_URL) rpcEndpoint = process.env.NEXT_PUBLIC_WORKSPACE_URL;
-
-const fetchProperties = async () => {
-    console.log(0, rpcEndpoint);
-    const provider = new ethers.providers.JsonRpcProvider(rpcEndpoint);
+const fetchMyProperties = async () => {
+    const web3Modal = new Web3Modal(); // new Web3Modal({ network: "mainnet", cacheProvider: true });
+    const connection = await web3Modal.connect();
+    const provider = new ethers.providers.Web3Provider(connection);
+    const signer = provider.getSigner();
+    const marketContract = new ethers.Contract(propertymarketaddress, Market.abi, signer);
     const tokenContract = new ethers.Contract(propertyaddress, Property.abi, provider);
-    const marketContract = new ethers.Contract(propertymarketaddress, Market.abi, provider);
     const data = await marketContract.fetchMyProperties();
 
     const items = await Promise.all(data.map(async (i) => {
@@ -36,4 +34,4 @@ const fetchProperties = async () => {
     return items;
 };
 
-module.exports = { fetchProperties };
+module.exports = { fetchMyProperties };

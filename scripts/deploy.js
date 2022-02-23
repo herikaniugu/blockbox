@@ -1,5 +1,5 @@
 const hre = require("hardhat");
-const fs = require('fs');
+const fs = require("fs");
 
 async function main() {
     const Market = await hre.ethers.getContractFactory("Market");
@@ -18,7 +18,7 @@ async function main() {
     `;
 
     let data = JSON.stringify(config)
-    fs.writeFileSync('config.js', JSON.parse(data))
+    fs.writeFileSync("config.js", JSON.parse(data))
 }
 
 main().then(() => process.exit(0)).catch((error) => {
@@ -27,4 +27,4 @@ main().then(() => process.exit(0)).catch((error) => {
 });
 
 
-// >npx hardhat run scripts/deploy.js --network mumbai
+// >npx hardhat run scripts/deploy.js --network testnet

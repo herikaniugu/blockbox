@@ -1,22 +1,16 @@
 import { useEffect, useState } from "react";
-import { fetchProperties, buyProperty } from "../utils/useCreator";
+import { fetchProperties } from "../utils/useDashboard";
 import Navbar from "./components/Navbar";
 
 export default function Creator() {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState("not-loaded");
-  const onLoadProperties = () => {
-    return fetchProperties().then((items) => {
+  useEffect(() => {
+    fetchProperties().then((items) => {
       setProperties(items);
       setLoading("loaded");
-      console.log(properties);
     }).catch((error) => console.log(error));
-  };
-  useEffect(() => {
-    onLoadProperties();
   });
-  const onMouseEnterColor = (e) => { e.target.style.backgroundColor = "#77b4ff"; e.target.style.color = "#120f1a"; };
-  const onMouseLeaveColor = (e) => { e.target.style.backgroundColor = "#3b3545"; e.target.style.color = "#ddd"; };
   return (
     <div
       style={{
@@ -54,7 +48,7 @@ export default function Creator() {
                   color: "#ddd",
                   fontSize: 20
                 }}>
-                {loading === "loaded" ? "No properties in marketplace." : "Loading..." }
+                {loading === "loaded" ? "No properties created." : "Loading..." }
               </div>
             </div>
           )

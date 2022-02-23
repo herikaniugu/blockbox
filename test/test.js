@@ -15,8 +15,8 @@ describe("Market", function() {
 
         const auctionPrice = ethers.utils.parseUnits('1', 'ether');
 
-        await property.createToken("https://www.mytokenlocation.com");
-        await property.createToken("https://www.mytokenlocation2.com");
+        await property.createToken("https://github.com/herikaniugu/blockbox");
+        await property.createToken("https://blockbox-demo.herokuapp.com");
 
         await market.createMarketItem(propertyContractAddress, 1, auctionPrice, { value: listingPrice });
         await market.createMarketItem(propertyContractAddress, 2, auctionPrice, { value: listingPrice });

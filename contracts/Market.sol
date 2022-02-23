@@ -11,7 +11,7 @@ contract Market is ReentrancyGuard {
 	Counters.Counter private _itemsSold;
 
 	address payable owner;
-	uint256 listingPrice = 0.025 ether;
+	uint256 listingPrice = 0.01 ether;
 
 	constructor() {
 		owner = payable(msg.sender);
@@ -147,7 +147,7 @@ contract Market is ReentrancyGuard {
 
 		for (uint i = 0; i < totalItemCount; i++) {
 		if (idToMarketItem[i + 1].seller == msg.sender) {
-			itemCount += 1;
+				itemCount += 1;
 			}
 		}
 

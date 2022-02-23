@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
-import { fetchProperties } from "../utils/useStore";
+import { fetchMyProperties } from "../utils/useStore";
 import Navbar from "./components/Navbar";
 
 export default function Store() {
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState("not-loaded");
   useEffect(() => {
-    fetchProperties().then((items) => {
+    fetchMyProperties().then((items) => {
       setProperties(items);
       setLoading("loaded");
-      console.log(properties);
     }).catch((error) => console.log(error));
   });
   const onMouseEnterColor = (e) => e.target.style.backgroundColor = "#9241f3";
@@ -51,7 +50,7 @@ export default function Store() {
                   color: "#ddd",
                   fontSize: 20
                 }}>
-                {loading === "loaded" ? "No properties in marketplace." : "Loading..." }
+                {loading === "loaded" ? "No properties in store." : "Loading..." }
               </div>
             </div>
           )

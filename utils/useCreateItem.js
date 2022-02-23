@@ -12,12 +12,7 @@ import Market from '../artifacts/contracts/Market.sol/Market.json';
 const onAttachement = async (event) => {
     const file = event.target.files[0];
     try {
-        const added = await client.add(
-            file,
-            {
-                progress: (prog) => console.log(`received: ${prog}`)
-            }
-        );
+        const added = await client.add(file, { progress: (prog) => console.log(`received: ${prog}`) });
         return `https://ipfs.infura.io/ipfs/${added.path}`;
     } catch (error) {
         console.log('Error uploading file: ', error);

@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Navbar() {
     const router = useRouter();
-    const menu = ["Overview", "Marketplace", "Store", "Tokenize", "Creator"];
-    const link = ["/", "/marketplace", "/store", "/tokenize", "/creator"];
+    const menu = ["Overview", "Marketplace", "Store", "Dashboard", "Tokenize"];
+    const link = ["/", "/marketplace", "/store", "/dashboard", "/tokenize"];
     return (
         <header
             style={{
