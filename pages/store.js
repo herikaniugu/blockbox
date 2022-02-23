@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchProperties } from "./utils/useStore";
+import { fetchProperties } from "../utils/useStore";
 import Navbar from "./components/Navbar";
 
 export default function Store() {
@@ -11,7 +11,7 @@ export default function Store() {
       setLoading("loaded");
       console.log(properties);
     }).catch((error) => console.log(error));
-  }, []);
+  });
   const onMouseEnterColor = (e) => e.target.style.backgroundColor = "#9241f3";
   const onMouseLeaveColor = (e) => e.target.style.backgroundColor = "#3b3545";
   return (

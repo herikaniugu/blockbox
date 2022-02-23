@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchProperties, buyProperty } from "./utils/useProperty";
+import { fetchProperties, buyProperty } from "../utils/useProperty";
 import Navbar from "./components/Navbar";
 
 export default function Marketplace() {

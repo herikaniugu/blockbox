@@ -4,10 +4,10 @@ import Web3Modal from 'web3modal';
 
 const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0');
 
-import { propertyaddress, propertymarketaddress } from '../../config';
+import { propertyaddress, propertymarketaddress } from '../config';
 
-import Property from '../../artifacts/contracts/Property.sol/Property.json';
-import Market from '../../artifacts/contracts/Market.sol/Market.json';
+import Property from '../artifacts/contracts/Property.sol/Property.json';
+import Market from '../artifacts/contracts/Market.sol/Market.json';
 
 const onAttachement = async (event) => {
     const file = event.target.files[0];

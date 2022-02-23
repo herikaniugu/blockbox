@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { createMarket, onAttachement } from "./utils/useCreateItem";
+import { createMarket, onAttachement } from "../utils/useCreateItem";
 import Navbar from "./components/Navbar";
 
 export default function Tokenize() {

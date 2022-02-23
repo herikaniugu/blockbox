@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchProperties, buyProperty } from "./utils/useCreator";
+import { fetchProperties, buyProperty } from "../utils/useCreator";
 import Navbar from "./components/Navbar";
 
 export default function Creator() {

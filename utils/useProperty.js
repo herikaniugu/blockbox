@@ -3,10 +3,10 @@ import { create as ipfsHttpClient } from 'ipfs-http-client';
 import Web3Modal from 'web3modal';
 import axios from 'axios';
 
-import { propertyaddress, propertymarketaddress } from '../../config';
+import { propertyaddress, propertymarketaddress } from '../config';
 
-import Property from '../../artifacts/contracts/Property.sol/Property.json';
-import Market from '../../artifacts/contracts/Market.sol/Market.json';
+import Property from '../artifacts/contracts/Property.sol/Property.json';
+import Market from '../artifacts/contracts/Market.sol/Market.json';
 
 let rpcEndpoint = null;
 if (process.env.NEXT_PUBLIC_WORKSPACE_URL) rpcEndpoint = process.env.NEXT_PUBLIC_WORKSPACE_URL;
